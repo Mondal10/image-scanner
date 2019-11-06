@@ -9,7 +9,9 @@
     <script src="./assets/scripts/index.js"></script>
 </head>
 <body>
-    <img id="ocr" width="500px" height="300px" src="./assets/images/ocr1.png" alt="random">
+    <input type='file' onchange="readURL(this);">
+    <br>
+    <img id="ocr-img" src="#" alt="your-image" width="auto" height="auto">
     <br>
     <button id="start-scan" onclick="startProcessing()">Start Scan</button>
     <span id="progress"></span>
