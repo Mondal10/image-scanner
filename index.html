@@ -5,19 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Trying to implement OCR using teserract">
+    <meta name="author" content="Amit Mondal">
     <title>Image Scanner</title>
+
+    <link rel="stylesheet" href="./assets/styles/app.css">
     <script src='https://unpkg.com/tesseract.js@v2.0.0-beta.1/dist/tesseract.min.js'></script>
-    <script src="./assets/scripts/index.js"></script>
 </head>
 
 <body>
-    <input type='file' onchange="readURL(this);">
-    <br>
-    <img id="ocr-img" src="#" alt="your-image" width="auto" height="auto">
-    <br>
-    <button id="start-scan" onclick="startProcessing()">Start Scan</button>
-    <span id="progress"></span>
-    <div id="result"></div>
+    <div class="centered">
+        <div class="input-container">
+            <label class="input-file">
+                Choose Image
+                <input type='file' onchange="readURL(this);">
+            </label>
+            <span class="file-name"></span>
+        </div>
+        <br>
+        <img id="ocr-img" src="#" alt="choose-image" width="auto" height="auto">
+        <br>
+        <button id="start-scan" onclick="startProcessing()">Start Scan</button>
+        <span id="progress"></span>
+        <div id="result"></div>
+    </div>
+
+    <script src="./assets/scripts/app.js"></script>
 </body>
 
 </html>

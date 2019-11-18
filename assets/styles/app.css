@@ -1,0 +1,48 @@
+html {
+    background-color: #232931;
+    color: #eeeeee;
+}
+
+button {
+    background-color: #4ecca3;
+    color: #393e46;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+img {
+    display: none;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.centered {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.input-container {
+    display: table;
+}
+
+.input-file {
+    display: table-cell;
+    padding: 10px;
+    background-color: #4ecca3;
+    color: #393e46;
+    cursor: pointer;
+}
+
+.file-name {
+    vertical-align: middle;
+    display: table-cell;
+    background: #eeeeee;
+    padding: 10px;
+    color: #393e46;
+    min-width: 20px;
+}

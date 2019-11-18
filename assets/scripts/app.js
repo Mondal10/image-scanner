@@ -1,5 +1,5 @@
 function startProcessing() {
-  let img = document.getElementById('ocr-img');
+  let img = document.querySelector('#ocr-img');
   Tesseract.recognize(
     img,
     'eng',
@@ -7,15 +7,15 @@ function startProcessing() {
   ).then((res) => {
     return res;
   }).then(({ data }) => {
-    const resultDiv = document.getElementById('result');
+    const resultDiv = document.querySelector('#result');
     resultDiv.innerHTML = `<span>Result of Scanned Image:</span><div contenteditable=true>${data.text}</div>`;
   })
 }
 
 function scanningProgress(m) {
-  document.getElementById('progress').innerText = 'Scanning...'
+  document.querySelector('#progress').innerText = 'Scanning...'
   if (m.status === 'recognizing text') {
-    document.getElementById('progress').innerText = `Scanning... ${Math.round(m.progress * 100)}%`;
+    document.querySelector('#progress').innerText = `Scanning... ${Math.round(m.progress * 100)}%`;
   }
 }
 
@@ -25,8 +25,13 @@ function readURL(input) {
     const reader = new FileReader();
 
     reader.onload = function (e) {
-      const uploadedImg = document.getElementById('ocr-img');
+      const uploadedImg = document.querySelector('#ocr-img');
+      const selectedFileName = document.querySelector('.file-name');
+
+      console.log(input.files[0]);
       uploadedImg.src = e.target.result;
+      uploadedImg.style.display = 'block';
+      selectedFileName.innerText = input.files[0].name;
     };
 
     reader.readAsDataURL(input.files[0]);
