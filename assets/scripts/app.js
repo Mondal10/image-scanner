@@ -8,14 +8,21 @@ function startProcessing() {
     return res;
   }).then(({ data }) => {
     const resultDiv = document.querySelector('#result');
-    resultDiv.innerHTML = `<span>Result of Scanned Image:</span><div contenteditable=true>${data.text}</div>`;
+    resultDiv.innerHTML = `
+      <span>Result of Scanned Image:</span>
+      <div style="background: #eeeeee; color: #393e46; padding: 10px;" contenteditable=true>
+        ${data.text}
+      </div>
+    `;
   })
 }
 
 function scanningProgress(m) {
   document.querySelector('#progress').innerText = 'Scanning...'
   if (m.status === 'recognizing text') {
-    document.querySelector('#progress').innerText = `Scanning... ${Math.round(m.progress * 100)}%`;
+    const progress = Math.round(m.progress * 100);
+    document.querySelector('#progress').innerText = `Scanning... ${progress}%`;
+    animateProgressBar(progress);
   }
 }
 
@@ -36,4 +43,26 @@ function readURL(input) {
 
     reader.readAsDataURL(input.files[0]);
   }
+}
+
+function animateProgressBar(progress) {
+  // let i = 0;
+  // if (i == 0) {
+  //   i = 1;
+    const progressBar = document.querySelector('#myBar');
+    // let width = progress;
+    // const id = setInterval(frame, 50);
+    // function frame() {
+      if (progress >= 100) {
+        // clearInterval(id);
+        console.log(progress);
+        progress = 0;
+        console.log(progress);
+      } else {
+        // width++;
+        progressBar.style.width = progress + "%";
+        progressBar.innerHTML = progress  + "%";
+      }
+    // }
+  // }
 }
