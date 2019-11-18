@@ -15,10 +15,9 @@ button {
 img {
     display: none;
     padding: 20px;
-    /* width: 450px;
-    height: 200px; */
     width: 50%;
     height: 50%;
+    margin: auto;
 }
 
 input[type="file"] {
@@ -36,14 +35,18 @@ input[type="file"] {
 }
   
 #myBar {
-    width: 1%;
+    /* width: 1%; */
     /* display: inline-block; */
     /* height: 10px; */
     font-size: 14px;
     background-color: #4ecca3;
     text-align: center;
-    /* line-height: 30px; */
     color: #393e46;
+}
+
+.disabled {
+    background-color: gray;
+    pointer-events: none;
 }
 
 .centered {

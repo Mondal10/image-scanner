@@ -21,7 +21,7 @@ function scanningProgress(m) {
   document.querySelector('#progress').innerText = 'Scanning...'
   if (m.status === 'recognizing text') {
     const progress = Math.round(m.progress * 100);
-    document.querySelector('#progress').innerText = `Scanning... ${progress}%`;
+    // document.querySelector('#progress').innerText = `Scanning... ${progress}%`;
     animateProgressBar(progress);
   }
 }
@@ -46,23 +46,13 @@ function readURL(input) {
 }
 
 function animateProgressBar(progress) {
-  // let i = 0;
-  // if (i == 0) {
-  //   i = 1;
-    const progressBar = document.querySelector('#myBar');
-    // let width = progress;
-    // const id = setInterval(frame, 50);
-    // function frame() {
-      if (progress >= 100) {
-        // clearInterval(id);
-        console.log(progress);
-        progress = 0;
-        console.log(progress);
-      } else {
-        // width++;
-        progressBar.style.width = progress + "%";
-        progressBar.innerHTML = progress  + "%";
-      }
-    // }
-  // }
+  const progressBar = document.querySelector('#myBar');
+
+  if (progress >= 100) {
+    progressBar.style.width = progress + "%";
+    progressBar.innerHTML = progress  + "%";
+  } else {
+    progressBar.style.width = progress + "%";
+    progressBar.innerHTML = progress  + "%";
+  }
 }
