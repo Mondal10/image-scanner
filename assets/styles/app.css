@@ -35,9 +35,6 @@ input[type="file"] {
 }
   
 #myBar {
-    /* width: 1%; */
-    /* display: inline-block; */
-    /* height: 10px; */
     font-size: 14px;
     background-color: #4ecca3;
     text-align: center;
