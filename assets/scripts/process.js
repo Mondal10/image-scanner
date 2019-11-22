@@ -5,9 +5,8 @@ export class process {
         img,
         'eng',
         { logger: m => this.scanningProgress(m) }
-      ).then((res) => {
-        return res;
-      }).then(({ data }) => {
+      ).then((res) => res
+      ).then(({ data }) => {
         const resultDiv = document.querySelector('#result');
         resultDiv.innerHTML = `
           <span>Result of Scanned Image:</span>
