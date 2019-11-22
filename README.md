@@ -4,7 +4,7 @@
 </p>
 <h3 align="center"><a href="https://mondal10.github.io/image-scanner/">Demo Link</a></h3>
 
-<h3 align="center">A small implementation of Teserract OCR</h3>
+<h3 align="center">A small and simple implementation of Teserract OCR</h3>
 
 ## Objective:
 - Just a Fun project.
