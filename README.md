@@ -7,7 +7,7 @@
 <h3 align="center">A small and simple implementation of Teserract OCR</h3>
 
 ## Objective:
-- Just a Fun project.
+- Just a Fun little project on text extraction.
 
 ## Reference link:
 [Teserract OCR](https://tesseract.projectnaptha.com/)
